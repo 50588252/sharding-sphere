@@ -14,6 +14,9 @@
  Date: 08/05/2022 23:25:51
 */
 
+USE product_db2;
+
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 

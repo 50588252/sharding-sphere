@@ -17,22 +17,22 @@ spring:
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/product_db1?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://192.168.0.101:33060/product_db1?useUnicode=true&characterEncoding=utf-8
         username: root
-        password: Nov2014
+        password: 5201314
       # ds2的配置信息,product_db2
       ds2:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/product_db2?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://192.168.0.101:33060/product_db2?useUnicode=true&characterEncoding=utf-8
         username: root
-        password: Nov2014
+        password: 5201314
     # 分片的配置
     sharding:
       # 表的分片策略
       tables:
         product_base:
-          # 数据节点配置，采用Groovy表达式，分库分表策略，这样是4个节点，ds1.product_base_1/ds1.product_base_2/ds2.product_base_1/ds2.product_base_2
+          # 数据节点配置，采用Groovy表达式，分库分表策略，这样是4个节点，ds1.product_base_$_1/ds1.product_base_$_2/ds2.product_base_$_1/ds2.product_base_$_2
           actual-data-nodes: ds$->{1..2}.product_base_$->{1..2}
           # 分表策略
           table‐strategy:
@@ -41,7 +41,6 @@ spring:
               sharding‐column: shop_id
               # 分片策略取模
               algorithm‐expression: product_base_$->{shop_id%2+1}
-          # 分库策略
           database‐strategy:
             inline:
               sharding‐column: product_id
@@ -55,12 +54,9 @@ spring:
         product_description:
           # 数据节点配置，采用Groovy表达式
           actual-data-nodes: ds$->{1..2}.product_description_$->{1..2}
-          # 分表策略
           table‐strategy:
             inline:
-              # 分片键
               sharding‐column: shop_id
-              # 分片算法
               algorithm‐expression: product_description_$->{shop_id%2+1}
           # 分库策略
           database‐strategy:

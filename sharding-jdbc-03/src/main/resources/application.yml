@@ -15,9 +15,9 @@ spring:
       ds:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/user_db?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://192.168.0.101:33060/user_db?useUnicode=true&characterEncoding=utf-8
         username: root
-        password: Nov2014
+        password: 5201314
     sharding:
       tables:
         t_user:

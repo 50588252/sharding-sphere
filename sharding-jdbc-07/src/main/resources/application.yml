@@ -15,16 +15,16 @@ spring:
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/product_db1?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://192.168.0.101:33060/product_db1?useUnicode=true&characterEncoding=utf-8
         username: root
-        password: Nov2014
+        password: 5201314
       # ds2的配置信息,product_db2
       ds2:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/product_db2?useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://192.168.0.101:33060/product_db2?useUnicode=true&characterEncoding=utf-8
         username: root
-        password: Nov2014
+        password: 5201314
     # 分片的配置
     sharding:
       # 表的分片策略

@@ -13,10 +13,10 @@
         <module>sharding-jdbc-03</module>
         <module>sharding-jdbc-04</module>
         <module>sharding-jdbc-05</module>
-        <module>sharding-jdbc-06</module>
+<!--        <module>sharding-jdbc-06</module>-->
         <module>sharding-jdbc-07</module>
         <module>sharding-jdbc-08</module>
-        <module>sharding-jdbc-09</module>
+<!--        <module>sharding-jdbc-09</module>-->
     </modules>
     <packaging>pom</packaging>
     <properties>

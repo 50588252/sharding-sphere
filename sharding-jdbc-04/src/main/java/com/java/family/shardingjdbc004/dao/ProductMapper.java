@@ -26,7 +26,7 @@ public interface ProductMapper {
     @Select("select * from product_base where product_id>#{productId}")
     Product selectByProductIdRange(Long productId);
 
-    @Select("select * from product_base where shop_id>#{shopId}")
+    @Select("select * from product_base where shop_id<#{shopId}")
     List<Product> listByShopId(Long shopId);
 
     @Select("select * from product_base where shop_id>#{low} and shop_id<#{upper}")

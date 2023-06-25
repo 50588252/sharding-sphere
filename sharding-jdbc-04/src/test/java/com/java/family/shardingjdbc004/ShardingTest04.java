@@ -5,8 +5,6 @@ import com.java.family.shardingjdbc004.dao.ProductMapper;
 import com.java.family.shardingjdbc004.dao.ProductTypeMapper;
 import com.java.family.shardingjdbc004.domain.Order;
 import com.java.family.shardingjdbc004.domain.Product;
-import com.java.family.shardingjdbc004.domain.ProductType;
-import com.java.family.shardingjdbc004.domain.ProductTypeVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.api.hint.HintManager;
 import org.apache.shardingsphere.core.strategy.keygen.SnowflakeShardingKeyGenerator;
@@ -16,7 +14,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import sun.text.resources.FormatData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,15 +50,15 @@ public class ShardingTest04 {
 
     @Test
     public void test2() {
-        Product product = productMapper.selectByProductId(747098489086803968L);
+        Product product = productMapper.selectByProductId(851882624954662912L);
         System.out.println(product);
     }
 
     @Test
     public void testByShopId() {
         //select * from product_base where shop_id between 30 and 60
-        List<Product> products = productMapper.listRangeByShopId(30L,100L);
-//        List<Product> products = productMapper.listByShopId(60L);
+//        List<Product> products = productMapper.listRangeByShopId(30L,100L);
+        List<Product> products = productMapper.listByShopId(49L);
         System.out.println(products);
     }
 

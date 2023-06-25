@@ -5,7 +5,6 @@ import com.java.family.shardingjdbc002.dao.ProductTypeMapper;
 import com.java.family.shardingjdbc002.model.Product;
 import com.java.family.shardingjdbc002.model.ProductType;
 import com.java.family.shardingjdbc002.model.ProductTypeVo;
-import jdk.nashorn.internal.runtime.JSONFunctions;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
